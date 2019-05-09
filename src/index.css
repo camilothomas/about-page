@@ -1,7 +1,134 @@
-div {
-	background-color: red;
-	width: 500px;
+body {
+	background-color: lightgrey;
+}
 
+nav {
+  font-family: 'Capriola';
+  background-image: url("black.png");
+  background-color: rgba(0,0,0,1);   
+}
 
+.iMap {
+	position: relative;
+	width: 1000px;	
+}
 
+.l-arrow {
+	position: absolute;
+	top: 175px;
+
+}
+
+.r-arrow {
+  position: absolute;
+  top: 175px;
+  right: 0px;
+}
+
+.ltablet {
+	background-color: silver;
+	width: 200px;
+	height: 250px;
+	position: absolute;
+	left: 100px;
+	top: 100px;
+	border-radius: 15px;
+	box-shadow: 0 0 5pt 2pt black;
+	z-index: 5;
+}
+
+.rtablet {
+	background-color: silver;
+	width: 200px;
+	height: 250px;
+	position: absolute;
+	right: 100px;
+	top: 100px;
+	border-radius: 15px;
+	box-shadow: 0 0 5pt 2pt black;
+	z-index: 5;
+}
+
+.ctablet {
+	background-color: silver;
+	width: 240px;
+	height: 300px;
+	position: absolute;
+	right: 380px;
+	top: 75px;
+	border-radius: 15px;
+	box-shadow: 0 0 5pt 2pt black;
+	z-index: 5;
+}
+
+.interest-nm {
+	position: absolute;
+	font-family: 'Roboto Condensed', sans-serif;
+  font-size: 36px;
+	padding: 10px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin: 20px;
+	margin-top: 10px;
+	background-color: white;
+	border-radius: 5px
+}
+
+.c-interest-nm {
+	position: absolute;
+	font-family: 'Roboto Condensed', sans-serif;
+  font-size: 43px;
+	padding: 12px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin: 24px;
+	margin-top: 12px;
+	background-color: white;
+	border-radius: 5px
+}
+
+.component-img {
+	width: 160px;
+	height: 160px;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	box-shadow: 0 0 2pt 1pt black;
+}
+
+.c-component-img {
+	width: 192px;
+	height: 192px;
+	position: absolute;
+	left: 24px;
+	bottom: 24px;
+	box-shadow: 0 0 2pt 1pt black;
+}
+
+.dummy1 {
+  background-color: grey;
+	width: 160px;
+	height: 200px;
+	position: absolute;
+	left: 270px;
+	top: 125px;
+	border-radius: 15px;
+	box-shadow: 0 0 5pt 2pt black;
+	z-index: 3;
+	background-image: url('Card_back_12.svg');
+	background-size: 160px 200px;
+}
+
+.dummy2 {
+  background-color: grey;
+	width: 160px;
+	height: 200px;
+	position: absolute;
+	right: 270px;
+	top: 125px;
+	border-radius: 15px;
+	box-shadow: 0 0 5pt 2pt black;
+	z-index: 3;
+	background-image: url('Card_back_10.svg');
+	background-size: 160px 200px;
 }
