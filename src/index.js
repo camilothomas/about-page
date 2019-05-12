@@ -8,10 +8,12 @@ import music from './music.jpg';
 import art from './art.jpg';
 import travel from './travel.jpg';
 import me from './me.jpg';
-import languages from './languages.png';
+import german from './german.png';
+import spanish from './spanish.jpg';
 import left from './left-100.png';
 import right from './right-100.png';
 import close from './close.svg';
+
 
 function CloseBtn(props) {
 	return(
@@ -31,8 +33,7 @@ function Arrow(props) {
 	    alt="arrow"
 	    className={props.whichClass}
 	    onClick={props.onClick}
-	  >
-	  </img>
+	  />
 	);
 }
 
@@ -44,8 +45,7 @@ function Interest(props) {
   	    className={props.clsNm}
   	    src={props.imgNm}
   	    alt={props.altMsg}
-  	  >
-  	  </img>
+  	  />
   	</div>
   );
 }
@@ -80,7 +80,8 @@ class InterestMap extends React.Component {
 		    ['Travel', travel, 'waterfall'],
 		    ['Art', art, 'drawing of two people'],
 		    ['Bio', me, 'me'],
-		    ['Languages', languages, 'old German handwriting']
+		    ['German', german, 'old German handwriting'],
+		    ['Spanish', spanish, 'mural']
 		  ],
 		  leftBack: 'dummy1',
 		  rightBack: 'dummy2',
@@ -133,29 +134,29 @@ class InterestMap extends React.Component {
 			}
 		}
 	  if (e.target.className === 'r-arrow') {
-			y-1===-1?yless=4:yless=y-1;
+			y-1===-1?yless=5:yless=y-1;
 			newArray[0][0] = this.state.allInterests[yless][0];
 			newArray[0][3] = this.state.allInterests[yless][1];
 			newArray[0][4] = this.state.allInterests[yless][2];
 			newArray[1][0] = this.state.allInterests[y][0];
 			newArray[1][3] = this.state.allInterests[y][1];
 			newArray[1][4] = this.state.allInterests[y][2];
-			y+1===5?ymore=0:ymore=y+1;
+			y+1===6?ymore=0:ymore=y+1;
 			newArray[2][0] = this.state.allInterests[ymore][0];
 			newArray[2][3] = this.state.allInterests[ymore][1];
 			newArray[2][4] = this.state.allInterests[ymore][2];
 		} else {
-			y+1===5?ymore=0:ymore=y+1;
+			y+1===6?ymore=0:ymore=y+1;
 			newArray[0][0] = this.state.allInterests[ymore][0];
 			newArray[0][3] = this.state.allInterests[ymore][1];
 			newArray[0][4] = this.state.allInterests[ymore][2];
 			let ymomo;
-			ymore+1===5?ymomo=0:ymomo=ymore+1;
+			ymore+1===6?ymomo=0:ymomo=ymore+1;
 			newArray[1][0] = this.state.allInterests[ymomo][0];
 			newArray[1][3] = this.state.allInterests[ymomo][1];
 			newArray[1][4] = this.state.allInterests[ymomo][2];
 			let ymomomo;
-			ymomo+1===5?ymomomo=0:ymomomo=ymomo+1;
+			ymomo+1===6?ymomomo=0:ymomomo=ymomo+1;
 			newArray[2][0] = this.state.allInterests[ymomomo][0];
 			newArray[2][3] = this.state.allInterests[ymomomo][1];
 			newArray[2][4] = this.state.allInterests[ymomomo][2];
@@ -172,20 +173,6 @@ class InterestMap extends React.Component {
 	}
 
 	arrayOfContent() {
-		/*let myArr = [];
-		myArr.push(
-			<div className='iMap'>
-  			{this.renderArrow(left, 'l-arrow')}
-  		  {this.renderInterest(...this.state.interestArray[0])}
-  		  <div className={this.state.leftBack}></div>
-  		  {this.renderInterest(...this.state.interestArray[1])}
-  	    <div className={this.state.rightBack}></div>
-  	    {this.renderInterest(...this.state.interestArray[2])}
-  			{this.renderArrow(right, 'r-arrow')}
-  			<p className='buffer'>' '</p>
-    	</div>
-    )
-		return myArr;*/
 		return(
 			<div className='iMap'>
   			{this.renderArrow(left, 'l-arrow')}
