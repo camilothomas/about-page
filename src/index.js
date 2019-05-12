@@ -11,27 +11,59 @@ import me from './me.jpg';
 import languages from './languages.png';
 import left from './left-100.png';
 import right from './right-100.png';
-import penguin from './Card_back_12.svg';
-import joker from './Atlas_djb.svg';
+import close from './close.svg';
+
+function CloseBtn(props) {
+	return(
+		<img
+		  src={close}
+		  alt='close button'
+		  className='close'
+		  onClick={props.onClick}
+		/>
+	);
+}
 
 function Arrow(props) {
-	
 	return(
-	  <img src={props.whichArrow} alt="arrow" className={props.whichClass} onClick={props.onClick}>
+	  <img
+	    src={props.whichArrow}
+	    alt="arrow"
+	    className={props.whichClass}
+	    onClick={props.onClick}
+	  >
 	  </img>
 	);
 }
 
-class Interest extends React.Component {
+function Interest(props) {
+	return(
+		<div className={props.clsLoc} onClick={props.onClick}>
+			<p className={props.clsTxt}>{props.head}</p>
+  	  <img
+  	    className={props.clsNm}
+  	    src={props.imgNm}
+  	    alt={props.altMsg}
+  	  >
+  	  </img>
+  	</div>
+  );
+}
+
+class Display extends React.Component {
+	
 	render() {
 		return(
-			<div className={this.props.clsLoc}>
-				<p className={this.props.clsTxt}>{this.props.head}</p>
-    	  <img className={this.props.clsNm} src={this.props.imgNm} alt={this.props.altMsg}>
-    	  </img>
-    	</div>
-	  );
-	}
+	  <div className={this.props.clss}>
+	  	<div className='frame2'>
+	  	  <div className='display'>
+	  	    <p className='tvTitle'>Title</p>
+	  	    <CloseBtn onClick={this.props.onClick} />
+	  	  </div>
+	  	</div>
+	  </div>
+		);
+  }
 }
 
 class InterestMap extends React.Component {
@@ -52,8 +84,19 @@ class InterestMap extends React.Component {
 		  ],
 		  leftBack: 'dummy1',
 		  rightBack: 'dummy2',
+		  displayClass: 'xdisplay',
   	};
   }
+
+  renderArrow(whichArrow, whichClass) {
+		return(
+			<Arrow
+			  whichArrow={whichArrow}
+			  whichClass={whichClass}
+			  onClick={e => this.handleClick(e)}
+			/>
+		);
+	}
 
 	renderInterest(head, clsLoc, clsNm, imgNm, altMsg, clsTxt) {
 		return(
@@ -64,17 +107,21 @@ class InterestMap extends React.Component {
 			  imgNm={imgNm}
 			  altMsg={altMsg}
 			  clsTxt={clsTxt}
+			  onClick={e => this.interestClick(e)}
 		  />
 		);
 	}
 
+	renderDisplay(clss) {
+		return(
+			<Display
+				onClick={e => this.handleClose(e)}
+				clss={clss}
+			/>
+		);
+	}
+
 	handleClick(e) {
-		/*
-		if (this.state.leftBack === 'dummy1') {
-			this.setState({leftBack: 'dummy3', rightBack: 'dummy4'});
-		} else {
-			this.setState({leftBack: 'dummy1', rightBack: 'dummy2'});
-		}*/
 		let newArray = this.state.interestArray;
 		let x = this.state.interestArray[0][0];
 		let y;
@@ -115,9 +162,18 @@ class InterestMap extends React.Component {
 		}
 		this.setState({interestArray: newArray});
 	}
+  
+  handleClose(e) {
+  	this.setState({displayClass: 'xdisplay'});
+  }
+
+	interestClick(e) {
+		this.setState({displayClass: 'frame'});
+	}
 
 	arrayOfContent() {
-		return(
+		/*let myArr = [];
+		myArr.push(
 			<div className='iMap'>
   			{this.renderArrow(left, 'l-arrow')}
   		  {this.renderInterest(...this.state.interestArray[0])}
@@ -128,19 +184,22 @@ class InterestMap extends React.Component {
   			{this.renderArrow(right, 'r-arrow')}
   			<p className='buffer'>' '</p>
     	</div>
-
+    )
+		return myArr;*/
+		return(
+			<div className='iMap'>
+  			{this.renderArrow(left, 'l-arrow')}
+  		  {this.renderInterest(...this.state.interestArray[0])}
+  		  <div className={this.state.leftBack}></div>
+  		  {this.renderInterest(...this.state.interestArray[1])}
+  	    <div className={this.state.rightBack}></div>
+  	    {this.renderInterest(...this.state.interestArray[2])}
+  			{this.renderArrow(right, 'r-arrow')}
+  			{this.renderDisplay(this.state.displayClass)}
+  			<p className='buffer'></p>
+    	</div>
 		);
   }
-
-	renderArrow(whichArrow, whichClass) {
-		return(
-			<Arrow
-			  whichArrow={whichArrow}
-			  whichClass={whichClass}
-			  onClick={e => this.handleClick(e)}
-			/>
-		);
-	}
 
   render() {
     return(
