@@ -55,12 +55,16 @@ class Display extends React.Component {
 	render() {
 		return(
 	  <div className={this.props.clss}>
-	  	<div className='frame2'>
+	  	
+	  	  
+	  	  
 	  	  <div className='display'>
-	  	    <p className='tvTitle'>Title</p>
+	  	    
+	  	    <p className='tvTitle'>{this.props.title}</p>
 	  	    <CloseBtn onClick={this.props.onClick} />
+	  	  	{this.props.content}
 	  	  </div>
-	  	</div>
+	  	
 	  </div>
 		);
   }
@@ -86,6 +90,23 @@ class InterestMap extends React.Component {
 		  leftBack: 'dummy1',
 		  rightBack: 'dummy2',
 		  displayClass: 'xdisplay',
+		  lArrowClass: 'l-arrow',
+		  rArrowClass: 'r-arrow',
+		 	displayTitle: '',
+		 	content: [
+		 					 <div className='content'>
+							   <p>Hello</p>
+		 					   <p>I am content</p>
+		 					   <p>What's your name?</p>
+		 					   <p>Good night, sleep well.</p>
+		 					 </div>,
+		 					 <div className='content'>
+							   <p>Hello</p>
+		 					   <p>I am other content</p>
+		 					   <p>What's your name?</p>
+		 					   <p>Good night, sleep well.</p>
+		 					 </div>
+		 					 ],
   	};
   }
 
@@ -118,6 +139,8 @@ class InterestMap extends React.Component {
 			<Display
 				onClick={e => this.handleClose(e)}
 				clss={clss}
+				title={this.state.displayTitle}
+				content={this.state.content[1]}
 			/>
 		);
 	}
@@ -165,23 +188,38 @@ class InterestMap extends React.Component {
 	}
   
   handleClose(e) {
-  	this.setState({displayClass: 'xdisplay'});
+  	this.setState({displayClass: 'xdisplay', lArrowClass: 'l-arrow', rArrowClass: 'r-arrow'});
   }
 
 	interestClick(e) {
-		this.setState({displayClass: 'frame'});
+		let cName = e.target.className;
+		if (!cName.includes('tablet')) {
+			cName = e.target.parentNode.className;
+		}
+		switch(cName[0]) {
+			case 'l':
+				this.setState({displayTitle: this.state.interestArray[0][0]});
+				break;
+			case 'r':
+				this.setState({displayTitle: this.state.interestArray[2][0]});
+			  break;
+			default:
+				this.setState({displayTitle: this.state.interestArray[1][0]});
+		}
+		console.log(cName);
+		this.setState({displayClass: 'frame', lArrowClass: 'xdisplay', rArrowClass: 'xdisplay'});
 	}
 
 	arrayOfContent() {
 		return(
 			<div className='iMap'>
-  			{this.renderArrow(left, 'l-arrow')}
+  			{this.renderArrow(left, this.state.lArrowClass)}
   		  {this.renderInterest(...this.state.interestArray[0])}
   		  <div className={this.state.leftBack}></div>
   		  {this.renderInterest(...this.state.interestArray[1])}
   	    <div className={this.state.rightBack}></div>
   	    {this.renderInterest(...this.state.interestArray[2])}
-  			{this.renderArrow(right, 'r-arrow')}
+  			{this.renderArrow(right, this.state.rArrowClass)}
   			{this.renderDisplay(this.state.displayClass)}
   			<p className='buffer'></p>
     	</div>
