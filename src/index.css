@@ -161,9 +161,47 @@ nav {
 }
 
 .content {
-	padding: 50px;
+	
+}
+
+.content p {
 	font-family: 'Capriola';
 	font-size: 18px;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.content img {
+	margin: 10px;
+}
+
+.content h5 {
+	text-align: center;
+}
+
+.content .vertical {
+  width:150px;
+}
+
+.content .horizontal {
+	width:200px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.content .panorama
+{
+	width:640px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.content .imgContainer {
+	text-align: center;
+}
+
+.content .imgHolder {
+	display: inline-block;
 }
 
 .tvTitle {
@@ -171,7 +209,8 @@ nav {
   font-size: 36px;
 	color:black;
 	text-align: center;
-	margin-top:  15px;
+	margin-top: .25em;
+	margin-bottom: .25em;
 	background-color: white;
 }
 
@@ -186,3 +225,4 @@ nav {
 .xdisplay {
 	display: none;
 }
+

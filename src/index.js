@@ -13,6 +13,21 @@ import spanish from './spanish.jpg';
 import left from './left-100.png';
 import right from './right-100.png';
 import close from './close.svg';
+import pyramids from './pyramids.jpg';
+import kammweg from './kammweg.jpg';
+import meckPo from './meckPo.jpg';
+import malinche from './malinche.jpg';
+import field from './field.jpg';
+import huasteca from './huasteca.jpg';
+import schloss from './schloss.jpg';
+import church from './church.jpg';
+import helmet from './helmet.jpg';
+import angels from './angels.jpg';
+import painting from './painting.jpg';
+import folkArt from './folkArt.jpg';
+import houston from './houston.jpg';
+import atlanta from './atlanta.jpg';
+import mexico from './mexico.jpg';
 
 
 function CloseBtn(props) {
@@ -92,6 +107,7 @@ class InterestMap extends React.Component {
 		  displayClass: 'xdisplay',
 		  lArrowClass: 'l-arrow',
 		  rArrowClass: 'r-arrow',
+		  contentNumber: 1,
 		 	displayTitle: '',
 		 	content: [
 		 					 <div className='content'>
@@ -101,11 +117,76 @@ class InterestMap extends React.Component {
 		 					   <p>Good night, sleep well.</p>
 		 					 </div>,
 		 					 <div className='content'>
-							   <p>Hello</p>
-		 					   <p>I am other content</p>
-		 					   <p>What's your name?</p>
-		 					   <p>Good night, sleep well.</p>
-		 					 </div>
+							   <p>Content coming soon [see Travel]</p>
+		 					 </div>,
+		 					 <div className='content'>
+		 					   <p>
+		 					     Travelling has been my second nature.
+							     Now it is time to settle down.  I haven't been on an airplane since May 2017.
+							     I accept the change, but
+							     I love to look at the pictures and remember the good times.
+		 					   </p>  
+		 					   <h5>Long Hikes</h5>
+			 				   <div className='imgContainer'>
+		 					     <div className='imgHolder'>
+		 					       <img className='horizontal' src={kammweg} alt="signs and boots" />
+		 					     </div>
+		 					     <div className='imgHolder'>
+		 					       <img className='horizontal' src={meckPo} alt="" />
+		 					     </div>
+		 					     <div className='imgHolder'>
+		 					       <img className='horizontal' src={field} alt="" />
+		 					     </div>
+			 				   </div>
+		 					   <h5>High Peaks</h5>
+		 					   <div className='imgContainer'>
+		 					     <div className='imgHolder'>
+		 					       <img className='horizontal' src={malinche} alt="" />
+		 					     </div>
+		 					     <div className='imgHolder'>
+		 					       <img className='horizontal' src={huasteca} alt="" />
+		 					     </div>
+			 				   </div>
+			 				   <h5>History</h5>
+			 				   <div className='imgContainer'>
+				 				   <div className='imgHolder'>
+			 					     <img className='vertical' src={church} alt="" />
+			 					   </div>
+				 				   <div className='imgHolder'>
+			 					     <img className='horizontal' src={schloss} alt="" />
+			 					   </div>
+			 					   <div className='imgHolder'>
+			 					     <img className='vertical' src={helmet} alt="" />
+			 					   </div>
+			 					   <div className='imgHolder'>
+			 					     <img className='horizontal' src={pyramids} alt="" />
+			 					   </div>
+			 				   </div>
+			 				   <h5>Art</h5>
+			 				   <div className='imgContainer'>
+				 				   <div className='imgHolder'>
+			 					     <img className='horizontal' src={angels} alt="" />
+			 					   </div>
+			 					   <div className='imgHolder'>
+			 					     <img className='vertical' src={folkArt} alt="" />
+			 					   </div>
+			 					   <div className='imgHolder'>
+			 					     <img className='horizontal' src={painting} alt="" />
+			 					   </div>
+			 				   </div>
+			 				   <h5>Big Cities</h5>
+			 				   <div className='imgContainer'>
+				 				   <div className='imgHolder'>
+			 					     <img className='vertical' src={atlanta} alt="" />
+			 					   </div>
+				 				   <div className='imgHolder'>
+			 					     <img className='horizontal' src={mexico} alt="" />
+			 					   </div>
+			 					   <div className='imgHolder'>
+			 					     <img className='vertical' src={houston} alt="" />
+			 					   </div>
+			 				   </div>
+		 				   </div>
 		 					 ],
   	};
   }
@@ -140,7 +221,7 @@ class InterestMap extends React.Component {
 				onClick={e => this.handleClose(e)}
 				clss={clss}
 				title={this.state.displayTitle}
-				content={this.state.content[1]}
+				content={this.state.content[this.state.contentNumber]}
 			/>
 		);
 	}
@@ -192,6 +273,7 @@ class InterestMap extends React.Component {
   }
 
 	interestClick(e) {
+		let titleChosen;
 		let cName = e.target.className;
 		if (!cName.includes('tablet')) {
 			cName = e.target.parentNode.className;
@@ -199,14 +281,22 @@ class InterestMap extends React.Component {
 		switch(cName[0]) {
 			case 'l':
 				this.setState({displayTitle: this.state.interestArray[0][0]});
+				titleChosen = this.state.interestArray[0][0];
 				break;
 			case 'r':
 				this.setState({displayTitle: this.state.interestArray[2][0]});
+			  titleChosen = this.state.interestArray[2][0];
 			  break;
 			default:
 				this.setState({displayTitle: this.state.interestArray[1][0]});
+				titleChosen = this.state.interestArray[1][0];
 		}
-		console.log(cName);
+		// do more later now just travel or nothing
+		if (titleChosen === 'Travel') {
+			this.setState({contentNumber: 2});
+		} else {
+			this.setState({contentNumber: 1});
+		}
 		this.setState({displayClass: 'frame', lArrowClass: 'xdisplay', rArrowClass: 'xdisplay'});
 	}
 
