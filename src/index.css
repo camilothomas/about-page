@@ -64,18 +64,11 @@ nav {
 
 /*interest title labels*/
 .interest-nm {
-	/*position: absolute;*/
 	font-family: 'Rock Salt', cursive;
   font-size: 30px;
   color: black;
   text-align: center;
   margin-top: 10px;
-	/*padding: 10px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	margin: 20px;
-	margin-top: 10px;
-	*/
 }
 
 .c-interest-nm {
@@ -141,13 +134,8 @@ nav {
 
 .frame {
 	position: absolute;
-	/*top: 0px;
-	left: 0px;*/
-	
 	width: 1000px;
-	/*height: 600px;*/
 	z-index: 7;
-	
 }
 
 .display {
@@ -159,14 +147,13 @@ nav {
 }
 
 .content {
-	
+	font-family: 'Capriola';
+	font-size: 18px;
 }
 
 .content p {
-	font-family: 'Capriola';
-	font-size: 18px;
-	padding-left: 1em;
-	padding-right: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
 }
 
 .content img {
@@ -224,3 +211,36 @@ nav {
 	display: none;
 }
 
+.containDisco {
+	background-image: linear-gradient(to right, #F5DF2E, white);
+	text-align: center;
+
+}
+
+.disco {
+	width: 20%;
+	padding-top: 10px;
+	
+}
+
+.discoPlayer {
+	width: 40%;
+	float: left;
+}
+
+.containRecord {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.musicP {
+	text-align: center;
+	margin-top: 1.5em;
+}
+
+.record {
+	width: 15%;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }

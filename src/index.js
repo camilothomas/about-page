@@ -28,6 +28,10 @@ import folkArt from './folkArt.jpg';
 import houston from './houston.jpg';
 import atlanta from './atlanta.jpg';
 import berlin from './berlin.jpg';
+import player from './player.png';
+import discogs from './discogs_logo_simplified.svg';
+import record from './discogs_vinyl_record_mark.svg';
+import sheet from './SheetMusic.svg';
 /*
 <a target='_blank' rel='noopener noreferrer' href="https://live.staticflickr.com/3456/3767419326_b439301075_b.jpg">
 <img className='horizontal' src={malinche} alt="" />
@@ -116,55 +120,64 @@ class InterestMap extends React.Component {
 		  rArrowClass: 'r-arrow',
 		  contentNumber: 1,
 		 	displayTitle: '',
-		 	content: [
-		 					 <div className='content'>
-							   <p>Hello</p>
-		 					   <p>I am content</p>
-		 					   <p>What's your name?</p>
-		 					   <p>Good night, sleep well.</p>
-		 					 </div>,
-		 					 <div className='content'>
-							   <p>Content coming soon [see Travel]</p>
-		 					 </div>,
-		 					 <div className='content'>
-		 					   <p>
-		 					     Travelling has been my second nature.
-							     Now it is time to settle down.  I haven't been on an airplane since May 2017.
-							     I accept the change, but
-							     I love to look at the pictures and remember the good times.
-		 					   </p>  
-		 					   <h5>Long Hikes</h5>
-			 				   <div className='imgContainer'>
-		 					     {this.renderPicture('8837/28011244154_c8256a6c66_b.jpg', 'horizontal', kammweg, 'picturesque German town')}
-		 					     {this.renderPicture('5339/30837289785_737aa406bb_b.jpg', 'horizontal', meckPo, 'big tree in rural field')}
-		 					     {this.renderPicture('8612/28474496892_d6f286762c_b.jpg', 'horizontal', field, 'rural field')}
-			 				   </div>
-		 					   <h5>High Peaks</h5>
-		 					   <div className='imgContainer'>
-		 					     {this.renderPicture('3456/3767419326_b439301075_b.jpg', 'horizontal', malinche, 'volcano')}
-		 					     {this.renderPicture('7921/39660619443_022b51ce4d_b.jpg', 'horizontal', huasteca, 'mountain')}
-			 				   </div>
-			 				   <h5>History</h5>
-			 				   <div className='imgContainer'>
-				 				   {this.renderPicture('8301/28215564154_6a1fedb573_b.jpg', 'vertical', church, 'damaged German church')}
-				 				   {this.renderPicture('8137/27977673254_2dde1a9723_b.jpg', 'horizontal', schloss, 'German castle')}
-			 					   {this.renderPicture('8644/28551459980_e1640bdcbf_b.jpg', 'vertical', helmet, 'ancient European helmet')}
-			 					   {this.renderPicture('2769/4109746479_bbe84aac1b_b.jpg', 'horizontal', pyramids, 'Mexican pyramids')}
-			 				   </div>
-			 				   <h5>Art</h5>
-			 				   <div className='imgContainer'>
-			 				   	 {this.renderPicture('8820/29470760406_974b3ce22c_b.jpg', 'horizontal', angels, 'angel sculpture')}
-			 					   {this.renderPicture('7896/47446411491_9fd76d9d12_b.jpg', 'vertical', folkArt, 'Mexican folk art')}
-			 					   {this.renderPicture('2775/5790733229_aac299fbb3_b.jpg', 'horizontal', painting, 'modern painting')}
-			 				   </div>
-			 				   <h5>Big Cities</h5>
-			 				   <div className='imgContainer'>
-				 				   {this.renderPicture('7912/46723225014_00262f4b45_b.jpg', 'vertical', atlanta, 'skyscraper in Atlanta')}
-				 				   {this.renderPicture('5695/30127202203_cfed0962ef_b.jpg', 'horizontal', berlin, 'Potzdamer Platz')}
-			 					   {this.renderPicture('2843/9284111707_8b4f4b9d36_b.jpg', 'vertical', houston, 'skyscrapers of Houston')}
-			 				   </div>
-		 				   </div>
-		 					 ],
+		 	content:  [
+		 					  <div className='content'>
+		 					    <div className="containDisco">
+		 					      <img src={player} alt="my record player" className="discoPlayer" />
+		 					      <img src={discogs} alt="Discogs logo" className="disco" />
+							    </div>
+	 					    	<div className="containRecord">
+	 					      <a target='_blank' href="https://www.discogs.com/user/cembre/collection">
+	 					        <img src={record} alt="vinyl record logo" className="record grow" />
+	 					      </a>
+	 					      <p className="musicP">
+						        The Discogs Community is where I have an online version of my record collection.
+						        When my records aren't on Discogs, I contribute submissions so myself and others can collect them.
+						      </p>
+	 					    	</div>
+		 					  </div>,
+		 					  <div className='content'>
+		 					    <p>
+		 					      Travelling has been my second nature.
+							      Now it is time to settle down.  I haven't been on an airplane since May 2017.
+							      I accept the change, but
+							      I love to look at the pictures and remember the good times.
+		 					    </p>  
+		 					    <h5>Long Hikes</h5>
+			 				    <div className='imgContainer'>
+		 					      {this.renderPicture('8837/28011244154_c8256a6c66_b.jpg', 'horizontal', kammweg, 'picturesque German town')}
+		 					      {this.renderPicture('5339/30837289785_737aa406bb_b.jpg', 'horizontal', meckPo, 'big tree in rural field')}
+		 					      {this.renderPicture('8612/28474496892_d6f286762c_b.jpg', 'horizontal', field, 'rural field')}
+			 				    </div>
+		 					    <h5>High Peaks</h5>
+		 					    <div className='imgContainer'>
+		 					      {this.renderPicture('3456/3767419326_b439301075_b.jpg', 'horizontal', malinche, 'volcano')}
+		 					      {this.renderPicture('7921/39660619443_022b51ce4d_b.jpg', 'horizontal', huasteca, 'mountain')}
+			 				    </div>
+			 				    <h5>History</h5>
+			 				    <div className='imgContainer'>
+				 				    {this.renderPicture('8301/28215564154_6a1fedb573_b.jpg', 'vertical', church, 'damaged German church')}
+				 				    {this.renderPicture('8137/27977673254_2dde1a9723_b.jpg', 'horizontal', schloss, 'German castle')}
+			 					    {this.renderPicture('8644/28551459980_e1640bdcbf_b.jpg', 'vertical', helmet, 'ancient European helmet')}
+			 					    {this.renderPicture('2769/4109746479_bbe84aac1b_b.jpg', 'horizontal', pyramids, 'Mexican pyramids')}
+			 				    </div>
+			 				    <h5>Art</h5>
+			 				    <div className='imgContainer'>
+			 				   	  {this.renderPicture('8820/29470760406_974b3ce22c_b.jpg', 'horizontal', angels, 'angel sculpture')}
+			 					    {this.renderPicture('7896/47446411491_9fd76d9d12_b.jpg', 'vertical', folkArt, 'Mexican folk art')}
+			 					    {this.renderPicture('2775/5790733229_aac299fbb3_b.jpg', 'horizontal', painting, 'modern painting')}
+			 				    </div>
+			 				    <h5>Big Cities</h5>
+			 				    <div className='imgContainer'>
+				 				    {this.renderPicture('7912/46723225014_00262f4b45_b.jpg', 'vertical', atlanta, 'skyscraper in Atlanta')}
+				 				    {this.renderPicture('5695/30127202203_cfed0962ef_b.jpg', 'horizontal', berlin, 'Potzdamer Platz')}
+			 					    {this.renderPicture('2843/9284111707_8b4f4b9d36_b.jpg', 'vertical', houston, 'skyscrapers of Houston')}
+			 				    </div>
+		 				    </div>,
+		 				    <div className='content'>
+							    <p>Coming Soon [see Travel or Music]</p>
+		 					  </div>
+		 					  ],
   	};
   }
 
@@ -280,10 +293,12 @@ class InterestMap extends React.Component {
 				titleChosen = this.state.interestArray[1][0];
 		}
 		// do more later now just travel or nothing
-		if (titleChosen === 'Travel') {
-			this.setState({contentNumber: 2});
-		} else {
+		if (titleChosen === 'Music') {
+			this.setState({contentNumber: 0});
+		} else if (titleChosen === 'Travel') {
 			this.setState({contentNumber: 1});
+		}	else {
+			this.setState({contentNumber: 2});
 		}
 		this.setState({displayClass: 'frame', lArrowClass: 'xdisplay', rArrowClass: 'xdisplay'});
 	}
@@ -309,7 +324,7 @@ class InterestMap extends React.Component {
     	<div>
     	  <nav className="navbar navbar-expand-lg navbar-light bg-light static-top">
     	    <div className="container">
-    	      <span class="navbar-brand mb-0 h1">Camilo Embree-Lowry</span>
+    	      <span className="navbar-brand mb-0 h1">Camilo Embree-Lowry</span>
     	      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     	        <span className="navbar-toggler-icon"></span>
     	      </button>
