@@ -31,19 +31,26 @@ import berlin from './berlin.jpg';
 import player from './player.png';
 import discogs from './discogs_logo_simplified.svg';
 import record from './discogs_vinyl_record_mark.svg';
-import sheet from './SheetMusic.svg';
+import dland from './dland.png';
+import tagesschau from './tagesschau.mp4';
 /*
-<a target='_blank' rel='noopener noreferrer' href="https://live.staticflickr.com/3456/3767419326_b439301075_b.jpg">
+<a target='_blank' rel="noopener noreferrer" href="https://live.staticflickr.com/3456/3767419326_b439301075_b.jpg">
 <img className='horizontal' src={malinche} alt="" />
+("https://www.tagesschau.de/multimedia/video/video-538649~player_branded-true.html","tageschau")}
+
+
 */
+
+
+
 function Picture(props) {
 	return(
 		<div className='imgHolder'>
-		  <a target='_blank'  href={props.href}>
+		  <a target='_blank' rel="noopener noreferrer" href={props.href}>
 		 	  <img className={props.orientation} src={props.src} alt={props.alt} />
 		 	</a>
 		</div>
-		)
+	);
 }
 
 function CloseBtn(props) {
@@ -127,7 +134,7 @@ class InterestMap extends React.Component {
 		 					      <img src={discogs} alt="Discogs logo" className="disco" />
 							    </div>
 	 					    	<div className="containRecord">
-	 					      <a target='_blank' href="https://www.discogs.com/user/cembre/collection">
+	 					      <a target='_blank' rel="noopener noreferrer" href="https://www.discogs.com/user/cembre/collection">
 	 					        <img src={record} alt="vinyl record logo" className="record grow" />
 	 					      </a>
 	 					      <p className="musicP">
@@ -176,10 +183,35 @@ class InterestMap extends React.Component {
 		 				    </div>,
 		 				    <div className='content'>
 							    <p>Coming Soon [see Travel or Music]</p>
+		 					  </div>,
+		 					  <div className='content'>
+							    <p>Coming Soon [see Travel or Music]</p>
+		 					  </div>,
+		 					  <div className='content'>
+		 					  	<div className = 'GermanContent'>
+			 					  	<img src={dland} alt="German house" className="dImg" />
+								    <p>
+								      After four semesters of German at ACC,
+										  I spent a year and a half in Leipzig and Berlin.
+										  In Lepzig I had many great language exchange partners like Maja, Klemens
+										  and Bettina.  Enjoy this retro German news broadcast.
+										  <br />
+										  Hier ist das Erste deutsche Fernsehen mit der Tagesschau
+										</p>
+										<video src={tagesschau} controls>
+  									<p>
+  									  Your browser doesn't support HTML5 video. Here is a
+  									  <a href={tagesschau}>link to the video</a>
+  									  instead.
+  									</p> 
+										</video>
+									</div>
 		 					  </div>
 		 					  ],
   	};
   }
+
+
 
   renderPicture(link, orientation, src, alt) {
   	return(
@@ -271,6 +303,12 @@ class InterestMap extends React.Component {
   
   handleClose(e) {
   	this.setState({displayClass: 'xdisplay', lArrowClass: 'l-arrow', rArrowClass: 'r-arrow'});
+  	if (this.state.displayTitle === "German") {
+  	// pause the tagesschau video on close
+  	let ts = document.querySelector('video');
+  	ts.pause();
+    }
+
   }
 
 	interestClick(e) {
@@ -297,7 +335,9 @@ class InterestMap extends React.Component {
 			this.setState({contentNumber: 0});
 		} else if (titleChosen === 'Travel') {
 			this.setState({contentNumber: 1});
-		}	else {
+		}	else if (titleChosen === 'German') {
+			this.setState({contentNumber: 4});
+		} else {
 			this.setState({contentNumber: 2});
 		}
 		this.setState({displayClass: 'frame', lArrowClass: 'xdisplay', rArrowClass: 'xdisplay'});
