@@ -199,11 +199,12 @@ class InterestMap extends React.Component {
 										  Hier ist das Erste deutsche Fernsehen mit der Tagesschau
 										</p>
 										<video src={tagesschau} controls>
-  									<p>
-  									  Your browser doesn't support HTML5 video. Here is a
-  									  <a href={tagesschau}>link to the video</a>
-  									  instead.
-  									</p> 
+										  <p>
+										    Your browser doesn't support HTML5 video. Here is a
+										    <a href={tagesschau}>link to the video
+										    </a>
+										    instead.
+										  </p>
 										</video>
 									</div>
 		 					  </div>
@@ -308,7 +309,6 @@ class InterestMap extends React.Component {
   	let ts = document.querySelector('video');
   	ts.pause();
     }
-
   }
 
 	interestClick(e) {
