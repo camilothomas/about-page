@@ -33,6 +33,15 @@ import discogs from './discogs_logo_simplified.svg';
 import record from './discogs_vinyl_record_mark.svg';
 import dland from './dland.png';
 import tagesschau from './tagesschau.mp4';
+import fox from './fox.jpg';
+import science from './science.jpg';
+import jungle from './jungle.jpg';
+import puroMarfil from './puroMarfil.jpg';
+import bisquets from './bisquets.jpg';
+import ice from './ice.jpg';
+import david from './david.jpg';
+import marqet from './marqet.jpg';
+
 /*
 <a target='_blank' rel="noopener noreferrer" href="https://live.staticflickr.com/3456/3767419326_b439301075_b.jpg">
 <img className='horizontal' src={malinche} alt="" />
@@ -182,7 +191,26 @@ class InterestMap extends React.Component {
 			 				    </div>
 		 				    </div>,
 		 				    <div className='content'>
-							    <p>Coming Soon [see Travel or Music]</p>
+							    <p>
+							      I earned a BFA at the School of the Art Institute of Chicago.
+							      Here are some of my drawings and prints.
+							    </p>
+							    <div className='imgContainer'>
+			 				      {this.renderPicture('6091/6275558672_dc2e55513c_b.jpg', 'artH', fox, 'abstract figurative lithograph')}
+			 				      {this.renderPicture('6197/6128718418_6b60a32ffe_b.jpg', 'artV', science, 'graphite sketch of master painting')}
+			 				    </div>
+			 				    <div className='imgContainer'>
+			 				      {this.renderPicture('6104/6274759042_e5cce6381b_b.jpg', 'artV', jungle, 'creature in jungle')}
+			 				      {this.renderPicture('6108/6274416721_70ff37a3a1_b.jpg', 'artH', puroMarfil, 'drypoint print')}
+			 				    </div>
+			 				    <div className='imgContainer'>
+			 				      {this.renderPicture('6039/6274406005_be27f62f21_b.jpg', 'artH', bisquets, 'drypoint print')}
+			 				      {this.renderPicture('7158/6475319405_c98d050649_b.jpg', 'artV', ice, 'etching of girl in snow scene')}
+			 				    </div>
+			 				    <div className='imgContainer'>
+			 				      {this.renderPicture('6068/6110696836_4ef19e7379_b.jpg', 'artV', david, 'graphite sketch of master painting')}
+			 				      {this.renderPicture('3091/2647089737_2f593bbaba_b.jpg', 'artH', marqet, 'sketch of big box brand idea')}
+			 				    </div>
 		 					  </div>,
 		 					  <div className='content'>
 							    <p>Coming Soon [see Travel or Music]</p>
@@ -305,9 +333,9 @@ class InterestMap extends React.Component {
   handleClose(e) {
   	this.setState({displayClass: 'xdisplay', lArrowClass: 'l-arrow', rArrowClass: 'r-arrow'});
   	if (this.state.displayTitle === "German") {
-  	// pause the tagesschau video on close
-  	let ts = document.querySelector('video');
-  	ts.pause();
+  	  // pause the tagesschau video on close
+  	  let ts = document.querySelector('video');
+  	  ts.pause();
     }
   }
 
@@ -335,6 +363,8 @@ class InterestMap extends React.Component {
 			this.setState({contentNumber: 0});
 		} else if (titleChosen === 'Travel') {
 			this.setState({contentNumber: 1});
+		} else if (titleChosen === 'Art') {
+			this.setState({contentNumber: 2});
 		}	else if (titleChosen === 'German') {
 			this.setState({contentNumber: 4});
 		} else {

@@ -256,8 +256,16 @@ nav {
 }
 
 .GermanContent video {
-margin-left: 2em;
-width: 540px;
-height: 405px;
-background-color: black;
+	margin-left: 2em;
+	width: 540px;
+	height: 405px;
+	background-color: black;
+}
+
+.artH {
+	width: 400px;
+}
+
+.artV {
+	width: 300px;
 }
