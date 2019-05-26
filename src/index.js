@@ -213,7 +213,7 @@ class InterestMap extends React.Component {
 			 				    </div>
 		 					  </div>,
 		 					  <div className='content'>
-							    <p>Coming Soon [see Travel or Music]</p>
+							    <p>Coming Soon [see Travel | Music | Art | German]</p>
 		 					  </div>,
 		 					  <div className='content'>
 		 					  	<div className = 'GermanContent'>
@@ -368,7 +368,7 @@ class InterestMap extends React.Component {
 		}	else if (titleChosen === 'German') {
 			this.setState({contentNumber: 4});
 		} else {
-			this.setState({contentNumber: 2});
+			this.setState({contentNumber: 3});
 		}
 		this.setState({displayClass: 'frame', lArrowClass: 'xdisplay', rArrowClass: 'xdisplay'});
 	}
