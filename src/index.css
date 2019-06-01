@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Rock+Salt');
 @import url('https://fonts.googleapis.com/css?family=Capriola');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
 
 body {
 	background-color: lightgrey;
@@ -268,4 +269,33 @@ nav {
 
 .artV {
 	width: 300px;
+}
+
+.Mixxer {
+	padding-left: .5em;
+	padding-right: .5em;
+}
+
+#Valencia {
+  margin: 0;
+  margin-left: 2em;
+  margin-right: 2em;
+  display: inline;
+}
+
+blockquote {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	padding-top: 1em;
+	font-family: 'Comfortaa', cursive;
+}
+
+.spanishContent {
+	text-align: center;
+	background-image: linear-gradient(to right, white, yellow, white);
+}
+
+.coats {
+	width: 150px;
+	display: inline;
 }

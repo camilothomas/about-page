@@ -40,8 +40,10 @@ import puroMarfil from './puroMarfil.jpg';
 import bisquets from './bisquets.jpg';
 import ice from './ice.jpg';
 import david from './david.jpg';
-import marqet from './marqet.jpg';
-
+import locagn from './locagn.jpg';
+import spain from './spain.jpg';
+import mexico from './coat_mexico.svg';
+import madrid from './coat_spain.svg';
 /*
 <a target='_blank' rel="noopener noreferrer" href="https://live.staticflickr.com/3456/3767419326_b439301075_b.jpg">
 <img className='horizontal' src={malinche} alt="" />
@@ -209,7 +211,7 @@ class InterestMap extends React.Component {
 			 				    </div>
 			 				    <div className='imgContainer'>
 			 				      {this.renderPicture('6068/6110696836_4ef19e7379_b.jpg', 'artV', david, 'graphite sketch of master painting')}
-			 				      {this.renderPicture('3091/2647089737_2f593bbaba_b.jpg', 'artH', marqet, 'sketch of big box brand idea')}
+			 				      {this.renderPicture('6223/6274833992_5ec8115573_b.jpg', 'artH', locagn, 'drypoint print')}
 			 				    </div>
 		 					  </div>,
 		 					  <div className='content'>
@@ -235,7 +237,33 @@ class InterestMap extends React.Component {
 										  </p>
 										</video>
 									</div>
-		 					  </div>
+		 					  </div>,
+		 					  <div className='content'>
+		 					    <div className='spanishContent'>
+		 					    	<span>
+		 					  	    <img src={mexico} alt="coat of arms of mexico" className="coats" />
+		 					  	  </span>  
+		 					  	  <span>
+		 					  	    <img src={spain} alt="food stand" id="Valencia" />
+		 					  	  </span>
+		 					  	  <span>
+		 					  	    <img src={madrid} alt="coat of arms of madrid" className="coats" />
+		 					  	  </span>
+		 					  	</div>
+		 					  	
+		 					  	<blockquote>
+		 					  	  Yo nací en Georgetown, Texas en la primera hora del 22 de junio.
+		 					  	  El principe William de Inglaterra nació en el mismo año pero un poco antes,
+		 					  	  el día 21 de junio.  Mi madre, Alice, tenía 37 años aquel día y yo fui su
+		 					  	  primer hijo.  No me gusta decir que nací en Georgetown porque Georgetown no
+		 					  	  tiene nada que ver con mi vida.  Mis padres vivían en Austin y yo nací en
+		 					  	  Georgetown solamente porque mi madre prefería un doctor de allí.  Bueno,
+		 					  	  Georgetown tiene un poco de importancia en mi vida.  Es donde mi padre
+		 					  	  estudió y es donde una tía mía vivió en su vejez.  Ella tenía 103 años
+		 					  	  cuando murió.  Ella fue una amable señora con su peluca y sus fuentes de
+		 					  	  dulces para sus visitantes.
+		 					  	</blockquote>
+		 					  </div>,
 		 					  ],
   	};
   }
@@ -367,6 +395,8 @@ class InterestMap extends React.Component {
 			this.setState({contentNumber: 2});
 		}	else if (titleChosen === 'German') {
 			this.setState({contentNumber: 4});
+		} else if (titleChosen === 'Spanish') {
+			this.setState({contentNumber: 5});
 		} else {
 			this.setState({contentNumber: 3});
 		}
